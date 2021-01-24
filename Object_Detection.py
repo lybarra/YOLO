@@ -34,7 +34,7 @@ def VGG16_for_YOLO_model(IMAGE_H, IMAGE_W, NUMBER_OF_CLASSES, NUMBER_OF_BBOXES, 
     return model
 
 def space_to_depth_x2(x):
-    return tf.space_to_depth(x, block_size=2)
+    return tf.nn.space_to_depth(x, block_size=2)
     
 def YOLO_V2_model(IMAGE_H, IMAGE_W, NUMBER_OF_CLASSES, NUMBER_OF_BBOXES, GAP=False):
     if IMAGE_H%32 != 0:
